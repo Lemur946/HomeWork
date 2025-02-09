@@ -24,8 +24,8 @@ def get_mask_account(account_number: Union[int, str]) -> str:
 
 
 # Entering card and account numbers through the console.
-card_number = int(input("Введите номер карты "))
-account_number = int(input("Введите номер счета "))
+card_number = str(input("Введите номер карты "))
+account_number = str(input("Введите номер счета "))
 
 # Output of masked card and account numbers to the console.
 print(get_mask_card_number(card_number))
