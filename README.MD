@@ -16,6 +16,11 @@ This is a widget that shows a customer's last few successful banking transaction
 1. [Сlick here](src/processing.py)
 2. Right click anywhere
 3. From the context menu select "run processing.py"
+## Tests:
+Testing of all available application functions has been carried out. 
+Test coverage is 99%. To test, enter in the terminal command ```pytest```. 
+To check the coverage percentage, enter the command in the terminal ```pytest --cov``` 
+or open ```./htmlcov/index.html```
 ## Documentation:
 information about the project structure [here](README.MD)
 ## Feedback:
