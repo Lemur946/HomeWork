@@ -37,7 +37,8 @@ def data_date() -> list[dict]:
 
 
 @pytest.fixture
-def sample_transactions():
+def sample_transactions() -> list[dict]:
+    """Function returning data for testing"""
     return [
         {
             "description": "Transaction 1",

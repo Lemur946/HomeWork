@@ -1,71 +1,38 @@
+# Importing the functions to be tested, pytest and typing
 import pytest
 from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
+from typing import List, Dict, Any
 
 
-# Параметризированный тест для фильтрации по валюте
 @pytest.mark.parametrize("currency, expected_count", [
-    ("USD", 2),  # Ожидаем 2 транзакции с валютой "USD"
-    ("EUR", 1),  # Ожидаем 1 транзакцию с валютой "EUR"
-    ("JPY", 0)  # Ожидаем 0 транзакций с валютой "JPY"
+    ("USD", 2),  # We are expecting 2 transactions with the currency "USD"
+    ("EUR", 1),  # We expect 1 transaction with the currency "EUR"
+    ("JPY", 0)  # We expect 0 transactions with the currency "JPY"
 ])
-def test_filter_by_currency(sample_transactions, currency, expected_count):
+def test_filter_by_currency(sample_transactions: List[Dict[str, Any]], currency: str, expected_count: int) -> None:
+    """A function that checks that the function correctly filters transactions for the given currency."""
     filtered_transactions = list(filter_by_currency(sample_transactions, currency))
     assert len(filtered_transactions) == expected_count
 
 
-###################################
-@pytest.mark.parametrize("transactions, expected_descriptions", [
-    # Тестируем с тремя транзакциями
-    (
-            [
-                {"description": "Transaction 1"},
-                {"description": "Transaction 2"},
-                {"description": "Transaction 3"},
-            ],
-            ["Transaction 1", "Transaction 2", "Transaction 3"]
-    ),
-    # Тестируем с двумя транзакциями, одна без описания
-    (
-            [
-                {"description": "Transaction 1"},
-                {},
-            ],
-            ["Transaction 1"]
-    ),
-    # Тестируем с пустыми транзакциями
-    (
-            [],
-            []
-    ),
-])
-def test_transaction_descriptions(transactions, expected_descriptions):
-    descriptions_generator = transaction_descriptions(transactions)
-    # Проверяем количество возвращаемых описаний
-    for expected in expected_descriptions:
-        assert next(descriptions_generator) == expected
-
-    # Проверяем, что следующая запись возвращает "Нет данных"
-    for _ in range(5):  # Здесь можно проверить несколько раз
-        assert next(descriptions_generator) == "Нет данных"
-
-
-# Параметризированный тест для описаний транзакций
 @pytest.mark.parametrize("description_count", [
-    (3),  # Ожидаем, что описание будет в 3 транзакциях
+    (3),  # We expect the description to be in 3 transactions
 ])
-def test_transaction_descriptions(sample_transactions, description_count):
+def test_transaction_descriptions(sample_transactions: List[Dict[str, Any]], description_count: int) -> None:
+    """A function that tests the operation of a function with a different number of input transactions"""
     descriptions = list(transaction_descriptions(sample_transactions))
     assert len(descriptions[:description_count]) == description_count
 
 
-def test_transaction_descriptions_no_data(sample_transactions):
+def test_transaction_descriptions_no_data(sample_transactions: List[Dict[str, Any]]) -> None:
+    """Function testing the operation of a function with an empty list"""
     empty_transactions = []
     descriptions = list(transaction_descriptions(empty_transactions))
-    assert descriptions == ['Нет данных']  # Убедитесь, что логика соответствует тому, как функция реализована
+    assert descriptions == ['Нет данных']
 
 
-def test_card_number_generator():
-    # Проверяем получение правильных номеров карт
+def test_card_number_generator() -> None:
+    """Function testing the correct formatting of card numbers"""
     start = 1
     stop = 5
     generated_numbers = list(card_number_generator(start, stop))
@@ -85,6 +52,7 @@ def test_card_number_generator():
     (0, 5, ValueError),
     (1, 10000000000000000, ValueError)
 ])
-def test_card_number_generator_invalid_input(start, stop, exception):
+def test_card_number_generator_invalid_input(start: Any, stop: Any, exception: type) -> None:
+    """A function that checks that the generator produces the correct card numbers in a given range."""
     with pytest.raises(exception):
         list(card_number_generator(start, stop))
