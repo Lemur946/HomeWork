@@ -1,6 +1,7 @@
 # Importing the functions to be tested and pytest
-from src.processing import filter_by_state, sort_by_date
 import pytest
+
+from src.processing import filter_by_state, sort_by_date
 
 
 # Creating a parameterization and testing function for the filtering function by key "CANCELED"
@@ -8,17 +9,17 @@ import pytest
     "operation_1, state_1, filtered_data_1",
     [
         (
-            [
-                {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-                {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-                {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
-                {"id": 615064591, "state": "CANCELED", "date": "2019-01-22T10:15:00.511233"},
-            ],
-            "CANCELED",
-            [
-                {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
-                {"id": 615064591, "state": "CANCELED", "date": "2019-01-22T10:15:00.511233"},
-            ],
+                [
+                    {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+                    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+                    {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+                    {"id": 615064591, "state": "CANCELED", "date": "2019-01-22T10:15:00.511233"},
+                ],
+                "CANCELED",
+                [
+                    {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+                    {"id": 615064591, "state": "CANCELED", "date": "2019-01-22T10:15:00.511233"},
+                ],
         )
     ],
 )
@@ -32,17 +33,17 @@ def test_filter_by_state_1(operation_1: list[dict], state_1: str, filtered_data_
     "operation_2, state_2, filtered_data_2",
     [
         (
-            [
-                {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-                {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-                {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
-                {"id": 615064591, "state": "CANCELED", "date": "2019-01-22T10:15:00.511233"},
-            ],
-            "EXECUTED",
-            [
-                {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-                {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-            ],
+                [
+                    {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+                    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+                    {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+                    {"id": 615064591, "state": "CANCELED", "date": "2019-01-22T10:15:00.511233"},
+                ],
+                "EXECUTED",
+                [
+                    {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+                    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+                ],
         )
     ],
 )

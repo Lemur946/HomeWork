@@ -3,7 +3,7 @@ name = "BankApplication"
 version = "0.1.0"
 description = "Bank application. Home work for Skypro"
 authors = [
-    {name = "Artem_Lemur_Stytsko",email = "tifyn932802@gmail.com"}
+    { name = "Artem_Lemur_Stytsko", email = "tifyn932802@gmail.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.13"
@@ -34,7 +34,7 @@ exclude = '.venv'
 
 [tool.isort]
 line_length = 119
-exclude = '.venv'
+
 
 [tool.black]
 line-length = 119

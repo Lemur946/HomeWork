@@ -1,6 +1,8 @@
-from mypy.server.objgraph import Iterable
-from data.transactions import transactions
 from typing import Generator, Union
+
+from mypy.server.objgraph import Iterable
+
+from data.transactions import transactions
 
 
 def filter_by_currency(transactions: list[dict], currency: str) -> Iterable[dict]:
