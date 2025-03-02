@@ -34,3 +34,36 @@ def data_date() -> list[dict]:
         {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
     ]
+
+
+@pytest.fixture
+def sample_transactions():
+    return [
+        {
+            "description": "Transaction 1",
+            "operationAmount": {
+                "amount": "100.00",
+                "currency": {
+                    "code": "USD",
+                }
+            }
+        },
+        {
+            "description": "Transaction 2",
+            "operationAmount": {
+                "amount": "50.00",
+                "currency": {
+                    "code": "EUR",
+                }
+            }
+        },
+        {
+            "description": "Transaction 3",
+            "operationAmount": {
+                "amount": "200.00",
+                "currency": {
+                    "code": "USD",
+                }
+            }
+        },
+    ]
