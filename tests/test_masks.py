@@ -1,7 +1,9 @@
 # Importing the functions to be tested, pytest and typing
-from src.masks import get_mask_card_number, get_mask_account
-import pytest
 from typing import Union
+
+import pytest
+
+from src.masks import get_mask_account, get_mask_card_number
 
 
 # Creating a parameterization and testing function mask card number

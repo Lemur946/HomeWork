@@ -1,6 +1,7 @@
 # Importing the functions to be tested and pytest
-from src.widget import mask_account_card, get_date
 import pytest
+
+from src.widget import get_date, mask_account_card
 
 
 # Creating a parameterization and testing function mask account or card number

@@ -1,6 +1,7 @@
 # Banking Widget
 ## Description: 
 This is a widget that shows a customer's last few successful banking transactions. At the moment, a function has been implemented that masks card and account numbers entered by the user into the terminal and a function that sorts the list by key and date.
+A tool has been created to efficiently work with large volumes of transaction data, using Python's capabilities to process data through generators.
 ## Installation:
 1. Clone the repository:
 [GitHub](https://github.com/Lemur946/HomeWork)
@@ -14,6 +15,11 @@ This is a widget that shows a customer's last few successful banking transaction
 
 ### To run the function to sort data by key or date:
 1. [Сlick here](src/processing.py)
+2. Right click anywhere
+3. From the context menu select "run processing.py"
+
+### To run functions and generators that implement data processing:
+1. [Сlick here](src/generators.py)
 2. Right click anywhere
 3. From the context menu select "run processing.py"
 ## Tests:
