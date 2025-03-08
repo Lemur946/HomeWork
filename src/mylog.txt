@@ -1,0 +1,5 @@
+
+2025-03-08 13:44:02,997 - INFO - Start executing function: my_function with arguments: (1, 2), {}
+2025-03-08 13:44:02,998 - INFO - my_function ok
+2025-03-08 13:44:02,998 - INFO - Start executing function: my_function_error with arguments: (1, 0), {}
+2025-03-08 13:44:02,999 - ERROR - my_function_error error: ZeroDivisionError. Inputs: (1, 0), {}
