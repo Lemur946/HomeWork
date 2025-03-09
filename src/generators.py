@@ -7,11 +7,11 @@ from data.transactions import transactions
 
 def filter_by_currency(transactions: list[dict], currency: str) -> Iterable[dict]:
     """
-    Function, which takes as input a list of dictionaries representing transactions and
-returns an iterator that one by one produces transactions where the transaction currency matches the given one
-"""
+        Function, which takes as input a list of dictionaries representing transactions and
+    returns an iterator that one by one produces transactions where the transaction currency matches the given one
+    """
     for transaction in transactions:
-        if 'operationAmount' in transaction and 'currency' in transaction['operationAmount']:
+        if "operationAmount" in transaction and "currency" in transaction["operationAmount"]:
             if transaction["operationAmount"]["currency"]["code"] == currency:
                 yield transaction
 
@@ -53,14 +53,18 @@ def card_number_generator(start: Union[int, str], stop: Union[int, str]) -> Gene
         stop = int(stop)
     except ValueError:
         raise ValueError("Некорректные входные данные")
-    if (isinstance(start, int) and isinstance(stop, int) and start <= stop and 1 <= start <= 9999999999999999 and
-            1 <= stop <= 9999999999999999):
-        card_numbers = '0000000000000000'
+    if (
+        isinstance(start, int)
+        and isinstance(stop, int)
+        and start <= stop
+        and 1 <= start <= 9999999999999999
+        and 1 <= stop <= 9999999999999999
+    ):
+        card_numbers = "0000000000000000"
         for card_number in range(start, stop + 1):
-            card_number_gen = (card_numbers[:-len(str(card_number))] + str(card_number))
+            card_number_gen = card_numbers[: -len(str(card_number))] + str(card_number)
             card_number_format = (
-                f"{card_number_gen[0:4]} {card_number_gen[4:8]} "
-                f"{card_number_gen[8:12]} {card_number_gen[12:16]}"
+                f"{card_number_gen[0:4]} {card_number_gen[4:8]} " f"{card_number_gen[8:12]} {card_number_gen[12:16]}"
             )
             yield card_number_format
 
