@@ -3,3 +3,11 @@
 2025-03-08 13:44:02,998 - INFO - my_function ok
 2025-03-08 13:44:02,998 - INFO - Start executing function: my_function_error with arguments: (1, 0), {}
 2025-03-08 13:44:02,999 - ERROR - my_function_error error: ZeroDivisionError. Inputs: (1, 0), {}
+2025-03-09 18:52:00,229 - INFO - Start executing function: my_function with arguments: (1, 2), {}
+2025-03-09 18:52:00,233 - INFO - my_function ok
+2025-03-09 18:52:00,234 - INFO - Start executing function: my_function with arguments: (1, 0), {}
+2025-03-09 18:52:00,234 - INFO - my_function ok
+2025-03-09 18:52:31,972 - INFO - Start executing function: my_function with arguments: (1, 2), {}
+2025-03-09 18:52:31,973 - INFO - my_function ok
+2025-03-09 18:52:31,973 - INFO - Start executing function: my_function with arguments: (1, 0), {}
+2025-03-09 18:52:31,973 - ERROR - my_function error: ZeroDivisionError. Inputs: (1, 0), {}
