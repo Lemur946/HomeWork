@@ -1,6 +1,7 @@
-from utils import get_transactions_dictionary
-from external_api import convert_currency_to_rub
-from typing import List, Dict, Any
+from typing import Any, Dict, List
+
+from .external_api import convert_currency_to_rub
+from .utils import get_transactions_dictionary
 
 # Loading transactions from JSON file
 transactions: List[Dict[str, Any]] = get_transactions_dictionary()
