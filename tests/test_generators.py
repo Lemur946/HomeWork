@@ -28,7 +28,7 @@ def test_transaction_descriptions(sample_transactions: List[Dict[str, Any]], des
 
 def test_transaction_descriptions_no_data(sample_transactions: List[Dict[str, Any]]) -> None:
     """Function testing the operation of a function with an empty list"""
-    empty_transactions = []
+    empty_transactions: list[dict[str, Any]] = []
     descriptions = list(transaction_descriptions(empty_transactions))
     assert descriptions == ['Нет данных']
 

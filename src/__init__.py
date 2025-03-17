@@ -8,7 +8,7 @@ transactions: List[Dict[str, Any]] = get_transactions_dictionary()
 
 # Convert each transaction and output the result
 for transaction in transactions:
-    if 'description' in transaction:
+    if "description" in transaction:
         # Convert the transaction amount into rubles
         converted_amount = convert_currency_to_rub(transaction)
         # Output the conversion result
