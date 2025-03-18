@@ -25,7 +25,7 @@ class TestCurrencyConversionAndJsonLoading(unittest.TestCase):
         ]
 
         # Call the function under test
-        transactions = get_transactions_dictionary()
+        transactions = get_transactions_dictionary('operation.json')
 
         # Check that the transactions are loaded correctly
         self.assertEqual(len(transactions), 2)

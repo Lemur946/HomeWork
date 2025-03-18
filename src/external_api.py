@@ -38,7 +38,7 @@ def convert_currency_to_rub(transaction: Dict[str, Any]) -> float:
         # Check if there is a rate for this currency
         if currency in rates:
             conversion_rate = float(rates[currency])
-            converted_amount = amount * conversion_rate
+            converted_amount = amount * (1 / conversion_rate)
 
             return converted_amount  # Return the converted amount in rubles
         else:

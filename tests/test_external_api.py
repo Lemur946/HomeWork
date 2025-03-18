@@ -42,8 +42,8 @@ class TestConvertCurrencyToRub(unittest.TestCase):
             }
         }
 
-        expected_usd_to_rub = 100 * 0.015
-        expected_eur_to_rub = 100 * 0.013
+        expected_usd_to_rub = 100 * (1/0.015)
+        expected_eur_to_rub = 100 * (1/0.013)
 
         # Assert the conversion results
         self.assertAlmostEqual(convert_currency_to_rub(transaction_usd), expected_usd_to_rub)
