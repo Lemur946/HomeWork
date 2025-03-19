@@ -1,5 +1,3 @@
-
-
 from src.external_api import convert_currency_to_rub
 from src.utils import get_transactions_dictionary
 
