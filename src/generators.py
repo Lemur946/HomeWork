@@ -17,7 +17,7 @@ def filter_by_currency(transactions: list[dict], currency: str) -> Iterable[dict
 
 
 # Example of using the function
-usd_transactions = iter(filter_by_currency(transactions, "USD"))
+usd_transactions = filter_by_currency(transactions, "USD")
 for _ in range(2):
     print(next(usd_transactions))
 
@@ -38,7 +38,7 @@ def transaction_descriptions(transactions: list[dict]) -> Iterable[str]:
 
 
 # Example of using the function
-descriptions = iter(transaction_descriptions(transactions))
+descriptions = transaction_descriptions(transactions)
 for _ in range(5):
     print(next(descriptions))
 
