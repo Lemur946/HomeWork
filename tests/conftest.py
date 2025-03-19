@@ -46,8 +46,8 @@ def sample_transactions() -> list[dict]:
                 "amount": "100.00",
                 "currency": {
                     "code": "USD",
-                }
-            }
+                },
+            },
         },
         {
             "description": "Transaction 2",
@@ -55,8 +55,8 @@ def sample_transactions() -> list[dict]:
                 "amount": "50.00",
                 "currency": {
                     "code": "EUR",
-                }
-            }
+                },
+            },
         },
         {
             "description": "Transaction 3",
@@ -64,7 +64,7 @@ def sample_transactions() -> list[dict]:
                 "amount": "200.00",
                 "currency": {
                     "code": "USD",
-                }
-            }
+                },
+            },
         },
     ]
