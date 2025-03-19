@@ -8,9 +8,9 @@ def get_transactions_dictionary(file_path: str) -> List[Dict[str, Any]]:
     try:
         # Opening the file and loading JSON data
         with open(file_path, "r", encoding="utf-8") as operations:
-            transactions = list(json.load(operations))
+            transactions = json.load(operations)
             if not isinstance(transactions, list):
-                raise ValueError(f"Expected a list, but got {type(transactions).__name__}")
+                return []
 
             return transactions  # Return the list of transactions
 
