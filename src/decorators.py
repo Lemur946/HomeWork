@@ -1,6 +1,6 @@
 import logging
 from functools import wraps
-from typing import Any, Callable, Optional, TypeVar
+from typing import Any, Callable, Optional, TypeVar, cast
 
 # Define TypeVar for function types
 F = TypeVar("F", bound=Callable[..., Any])
@@ -34,6 +34,6 @@ def log(filename: Optional[str] = None) -> Callable[[F], F]:
                 logging.error(f"{func.__name__} error: {type(e).__name__}. Inputs: {args}, {kwargs}")
                 raise
 
-        return wrapper
+        return cast(F, wrapper)
 
     return decorator
