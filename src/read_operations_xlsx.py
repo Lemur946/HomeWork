@@ -8,7 +8,7 @@ def read_transactions_from_excel(file_path: str) -> list[dict[Hashable, Any]]:
     A function that reads financial transactions from an Excel file.
     """
     try:
-        file_path = '../data/transactions_excel.xlsx'
+
         df = pd.read_excel(file_path)  # Open the Excel file and read the contents
         if df.empty:  # Checking if a file is empty
             return []
@@ -24,5 +24,5 @@ def read_transactions_from_excel(file_path: str) -> list[dict[Hashable, Any]]:
         return []
 
 
-transactions_excel = read_transactions_from_excel('transactions.xlsx')
-print(transactions_excel)
+file_path = read_transactions_from_excel('../data/transactions_excel.xlsx')
+print(file_path)

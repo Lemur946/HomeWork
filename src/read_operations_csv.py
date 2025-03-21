@@ -7,7 +7,7 @@ def read_transactions_from_csv(file_path: str) -> List[Dict[str, Any]]:
     Function that reads financial transactions from a CSV file.
     """
     try:
-        file_path = '../data/transactions.csv'
+
         with open(file_path, mode='r', encoding='utf-8') as file:  # Open the file
             csv_reader = csv.DictReader(file, delimiter=';')
             if not csv_reader.fieldnames:  # Check for headers
@@ -24,5 +24,5 @@ def read_transactions_from_csv(file_path: str) -> List[Dict[str, Any]]:
         return []
 
 
-transactions_csv = read_transactions_from_csv('transactions.csv')
-print(transactions_csv)
+file_path = read_transactions_from_csv('../data/transactions.csv')
+print(file_path)
