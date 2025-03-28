@@ -10,13 +10,13 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def get_transactions_dictionary(file_path: str) -> List[Dict[str, Any]]:
+def get_transactions_dictionary(file_path_JSON: str) -> List[Dict[str, Any]]:
     """A function that loads transactions from a JSON file and returns them as a dictionary."""
     # Path to the file with transactions
     try:
         logger.info("Opening the file and loading JSON data")
         # Opening the file and loading JSON data
-        with open(file_path, "r", encoding="utf-8") as operations:
+        with open(file_path_JSON, "r", encoding="utf-8") as operations:
             transactions = json.load(operations)
             if not isinstance(transactions, list):
                 logger.error("Error! Not a list was sent")
@@ -28,3 +28,5 @@ def get_transactions_dictionary(file_path: str) -> List[Dict[str, Any]]:
         logger.error(f"An error occurred: {ex}")
         # In case of error, return an empty list
         return []
+file_path_JSON = get_transactions_dictionary('../data/operations.json')
+# print(type(file_path_JSON))
