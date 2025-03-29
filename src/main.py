@@ -1,9 +1,9 @@
-from utils import get_transactions_dictionary
-from read_operations_csv import read_transactions_from_csv
-from read_operations_xlsx import read_transactions_from_excel
-from processing import sort_by_date, filter_by_state
-from search import search_transactions_by_description
-from widget import mask_account_card
+from src.utils import get_transactions_dictionary
+from src.read_operations_csv import read_transactions_from_csv
+from src.read_operations_xlsx import read_transactions_from_excel
+from src.processing import sort_by_date, filter_by_state
+from src.search import search_transactions_by_description
+from src.widget import mask_account_card
 import math
 
 
