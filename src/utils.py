@@ -1,6 +1,6 @@
 import json
-import logging
 from typing import Any, Dict, List
+
 # import os
 #
 # log_path = os.path.abspath('../logs/utils.log')
@@ -23,14 +23,16 @@ def get_transactions_dictionary(file_path_JSON: str) -> List[Dict[str, Any]]:
         with open(file_path_JSON, "r", encoding="utf-8") as operations:
             transactions = json.load(operations)
             if not isinstance(transactions, list):
-                logger.error("Error! Not a list was sent")
+                # logger.error("Error! Not a list was sent")
                 return []
             # logger.info("Return a list of dictionaries with data")
             return transactions  # Return the list of transactions
 
-    except (json.JSONDecodeError, FileNotFoundError, ValueError) as ex:
+    except (json.JSONDecodeError, FileNotFoundError, ValueError):
         # logger.error(f"An error occurred: {ex}")
         # In case of error, return an empty list
         return []
+
+
 file_path_JSON = get_transactions_dictionary('../data/operations.json')
 # print(type(file_path_JSON))

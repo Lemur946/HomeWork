@@ -1,5 +1,8 @@
 import re
-def search_transactions_by_description(transactions, search_str):
+from typing import Any, Dict, List
+
+
+def search_transactions_by_description(transactions: List[Dict[str, Any]], search_str: str) -> List[Dict[str, Any]]:
     """
     Function for searching banking transactions by a string in the description.
     """
@@ -13,7 +16,9 @@ def search_transactions_by_description(transactions, search_str):
     ]
 
     return matched_transactions
-def count_transactions_by_category(transactions, categories):
+
+
+def count_transactions_by_category(transactions: List[Dict[str, Any]], categories: List[str]) -> Dict[str, int]:
     """
     Function for counting the number of transactions by category.
     """
@@ -23,7 +28,7 @@ def count_transactions_by_category(transactions, categories):
     # Walkthrough of all operations
     for transaction in transactions:
         # Is the description a field in the dictionary and is it empty?
-        description = transaction.get('description', '').lower()
+        description: str = transaction.get('description', '').lower()
 
         # Check each category against the operation description
         for category in categories:
@@ -32,10 +37,3 @@ def count_transactions_by_category(transactions, categories):
                 break  # It is assumed that one operation belongs to only one category.
 
     return category_count
-
-
-# if __name__ == "__main__":
-#     transactions =pass
-#     search_string =pass
-#     result = search_transactions_by_description(transactions, search_string)
-#     print(result)

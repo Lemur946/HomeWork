@@ -25,4 +25,3 @@ def read_transactions_from_csv(file_path_CSV: str) -> List[Dict[str, Any]]:
 
 
 file_path_CSV = read_transactions_from_csv('../data/transactions.csv')
-

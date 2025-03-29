@@ -25,4 +25,3 @@ def read_transactions_from_excel(file_path_XLSX: str) -> list[dict[Hashable, Any
 
 
 file_path_XLSX = read_transactions_from_excel('../data/transactions_excel.xlsx')
-

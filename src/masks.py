@@ -1,4 +1,3 @@
-import logging
 from typing import Union
 
 # logger = logging.getLogger('mask')
@@ -38,7 +37,6 @@ def get_mask_account(account_number: Union[int, str]) -> str:
         # logger.info("The account number is being masked")
         masked_account_number = f"**{account_number[-4:]}"
     return masked_account_number  # Returning the masked account number via the f line.
-
 
 # Entering card and account numbers through the console.
 # card_number = str(input("Введите номер карты "))

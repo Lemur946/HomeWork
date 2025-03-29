@@ -1,6 +1,6 @@
 import re
 import unittest
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 
 # Определяем функции, которые будем тестировать
