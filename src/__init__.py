@@ -10,9 +10,10 @@ for transaction in file_path:
         # Convert the transaction amount into rubles
         converted_amount = convert_currency_to_rub(transaction)
         # Output the conversion result
-        print(f"Converted amount for '{transaction['description']}': {converted_amount} RUB")  # Вывод результата
+        # print(f"Converted amount for '{transaction['description']}': {converted_amount} RUB")  # Вывод результата
     else:
+        pass
         # If the transaction description is missing, we display an error
-        print("Error: Transaction does not contain a description.")
+        # print("Error: Transaction does not contain a description.")
 if __name__ == "__main__":
     print(file_path)

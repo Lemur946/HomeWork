@@ -44,6 +44,7 @@ def convert_currency_to_rub(transaction: Dict[str, Any]) -> float:
         else:
             print(f"Rate for currency 'float({currency})' not found.")
     else:
-        print(f"Error while accessing API: {response.status_code}")
+        pass
+        # print(f"Error while accessing API: {response.status_code}")
 
     return 0.0  # In case of error, return 0
